@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00203d"/>
+      <stop offset="100%" style="stop-color:#001528"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2dd4bf"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="1100" cy="100" r="300" fill="#2dd4bf" opacity="0.05"/>
+  <circle cx="100" cy="530" r="200" fill="#0891b2" opacity="0.05"/>
+  
+  <!-- Grid Pattern -->
+  <g opacity="0.1">
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="300" x2="1200" y2="300" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="500" x2="1200" y2="500" stroke="#fff" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="800" y1="0" x2="800" y2="630" stroke="#fff" stroke-width="1"/>
+    <line x1="1000" y1="0" x2="1000" y2="630" stroke="#fff" stroke-width="1"/>
+  </g>
+  
+  <!-- Logo Icon -->
+  <g transform="translate(100, 80)">
+    <rect x="0" y="0" width="60" height="60" rx="12" fill="#2dd4bf"/>
+    <circle cx="30" cy="30" r="20" fill="none" stroke="#00203d" stroke-width="4"/>
+    <circle cx="30" cy="30" r="8" fill="#00203d"/>
+  </g>
+  
+  <!-- Brand Name -->
+  <text x="180" y="125" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="bold" fill="#fff">Linkty</text>
+  
+  <!-- Headline -->
+  <text x="600" y="280" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="bold" fill="#fff">
+    Aus Anfragen werden
+  </text>
+  <text x="600" y="350" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="bold" fill="url(#accent)">
+    Termine
+  </text>
+  
+  <!-- Subline -->
+  <text x="600" y="420" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#9ca3af">
+    KI-Plattform für Terminbuchung & Content Automation
+  </text>
+  
+  <!-- CTA Badge -->
+  <g transform="translate(450, 470)">
+    <rect x="0" y="0" width="300" height="60" rx="30" fill="#2dd4bf"/>
+    <text x="150" y="38" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#00203d">Jetzt Demo buchen →</text>
+  </g>
+  
+  <!-- Bottom Tagline -->
+  <text x="600" y="580" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#6b7280">
+    24/7 erreichbar • DSGVO-konform • Made in Germany
+  </text>
+</svg>

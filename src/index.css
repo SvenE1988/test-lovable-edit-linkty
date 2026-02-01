@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ===== LINKTY BRAND TOKENS ===== */
+  /* Primary Brand Colors */
+  --brand-dark: #00203d;
+  --brand-darker: #001528;
+  --brand-mint: #2dd4bf;
+  --brand-mint-light: #9efdef;
+  --brand-cyan: #0891b2;
+  --brand-teal: #14b8a6;
+
+  /* Surfaces */
+  --surface-dark: #00203d;
+  --surface-light: #f0fdfa;
+  --surface-white: #ffffff;
+
+  /* Text Colors (semantic) */
+  --text-on-dark: #ffffff;
+  --text-on-dark-muted: rgba(255, 255, 255, 0.7);
+  --text-on-dark-subtle: rgba(255, 255, 255, 0.5);
+  --text-on-light: #00203d;
+  --text-on-light-muted: rgba(0, 32, 61, 0.7);
+  --text-on-light-subtle: rgba(0, 32, 61, 0.5);
+
+  /* Borders */
+  --border-on-dark: rgba(255, 255, 255, 0.1);
+  --border-on-dark-hover: rgba(45, 212, 191, 0.3);
+  --border-on-light: rgba(0, 32, 61, 0.1);
+  --border-on-light-hover: rgba(8, 145, 178, 0.3);
+
+  /* Glows & Effects */
+  --glow-mint: rgba(45, 212, 191, 0.3);
+  --glow-mint-subtle: rgba(45, 212, 191, 0.15);
+
+  /* ===== SHADCN COMPATIBILITY ===== */
+  --background: 210 100% 12%;
+  --foreground: 0 0% 100%;
+  --card: 210 100% 10%;
+  --card-foreground: 0 0% 100%;
+  --popover: 210 100% 10%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 170 95% 80%;
+  --primary-foreground: 210 100% 12%;
+  --secondary: 210 100% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 210 100% 20%;
+  --muted-foreground: 0 0% 70%;
+  --accent: 170 95% 80%;
+  --accent-foreground: 210 100% 12%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 210 50% 30%;
+  --input: 210 50% 30%;
+  --ring: 170 95% 80%;
+  --radius: 0.75rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Inter Tight",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #00203d;
+  color: white;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* ============================================
+   SCROLL BEHAVIOR
+   Native smooth scrolling (Lenis wurde entfernt)
+   ============================================ */
+
+/* Reduzierte Bewegung respektieren */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Global Wrapper */
+.global-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 5vw, 7.5%);
+}
+
+@media (min-width: 1920px) {
+  .global-wrapper {
+    max-width: 1920px;
+  }
+}
+
+/* Glassmorphism Effects */
+.glass {
+  background: rgba(0, 32, 61, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scroll Reveal - Removed (using Framer Motion instead) */
+
+/* Custom Scrollbar - HIDDEN per user request */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Selection */
+::selection {
+  background: var(--brand-mint);
+  color: var(--brand-dark);
+}
+
+/* Layer base overrides */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-brand-dark text-white;
+  }
+}
+
+/* ============================================
+   SKIP LINK - Accessibility
+   ============================================ */
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  z-index: 9999;
+  background-color: var(--brand-mint);
+  color: var(--brand-dark);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   APP-SPECIFIC UTILITIES
+   ============================================ */
+
+/* FAQ Accordion - Used by FAQSection */
+.faq-item {
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Logo Marquee - Used by LogoMarquee */
+.marquee-container {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* CTA Section Gradient - May be used */
+.cta-gradient {
+  background: linear-gradient(180deg, #00203d 0%, #001528 50%, #00203d 100%);
+}
+
+/* Footer Gradient - May be used */
+.footer-gradient {
+  background: linear-gradient(180deg, transparent 0%, #001528 20%);
+}

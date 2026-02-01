@@ -1,0 +1,5 @@
+/* Intentionally empty.
+
+All global + app-wide styles live in src/index.css.
+We keep this file to avoid accidental re-introduction of typography overrides.
+*/
